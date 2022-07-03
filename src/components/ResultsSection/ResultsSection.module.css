@@ -1,0 +1,9 @@
+.result {
+    background-color: rgba(0, 0, 0, .5);
+    padding: 10px;
+    border-radius: 15px 0 15px 0;
+    min-height: calc(250rem / 16);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

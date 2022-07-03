@@ -1,7 +1,6 @@
 import styles from "./SuggestionsList.module.css";
-import data from "../../../data";
 const SuggestionsList = (props) => { 
-    const {value, setValue} = props;
+    const {value, setValue, data} = props;
 
     const handleClick = (val) => {
         setValue(val);

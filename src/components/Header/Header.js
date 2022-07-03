@@ -1,11 +1,11 @@
 import SearchForm from "../SearchForm/SearchForm";
 import Container from "../UI/Container";
 import styles from "./Header.module.css";
-const Header = () => {
+const Header = (props) => {
     return (
         <header className={styles.header}>
             <Container>
-                <SearchForm />
+                <SearchForm setResult={props.setResult} />
             </Container>
         </header>
     );
