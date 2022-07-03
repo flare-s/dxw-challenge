@@ -1,0 +1,24 @@
+.search-form {
+    max-width: calc(450rem / 16);
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    padding: 15px 0;
+    position: relative;
+}
+
+.search-input {
+    flex: 1;
+    border: none;
+    padding: 5px;
+}
+
+.search-button {
+    padding: 5px 10px;
+    background-color: var(--dark-bg);
+    color: var(--text);
+    font-size: calc(16rem / 16);
+    border: none;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+}
