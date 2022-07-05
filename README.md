@@ -2,6 +2,18 @@
 
 Make a start on building a UK Government acronym search, that allows users to search for an acronym, and will return the matching organisation for that acronym, if one exists.
 
+## Getting Started
+
+To run this project please type the following commands:
+
+### `npm i`
+
+This will install all the necessary dependencies.
+
+### `npm start`
+
+This will start the app on a development server. 
+
 ## User stories
 
 - [x] When the user first loads the application, they are presented with a free text search
