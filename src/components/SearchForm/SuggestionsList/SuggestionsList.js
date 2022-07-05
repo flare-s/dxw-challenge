@@ -1,9 +1,15 @@
 import styles from "./SuggestionsList.module.css";
+import { useState, useEffect } from "react";
 const SuggestionsList = (props) => { 
-    const {value, setValue, data} = props;
-
+    const {value, setValue, data, submit} = props;
+    const [triggered, setTriggered] = useState(false)
+    useEffect(() => {
+        triggered && submit.current.click();
+        setTriggered(false);
+    }, [triggered])
     const handleClick = (val) => {
         setValue(val);
+        setTriggered(true);
     }
     return (
         <ul className={styles["suggestions-list"]}>

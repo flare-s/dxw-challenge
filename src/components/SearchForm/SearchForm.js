@@ -1,16 +1,17 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import styles from "./SearchForm.module.css";
 import SuggestionsList from "./SuggestionsList/SuggestionsList";
 import data from "../../data";
 const SearchForm = ({setResult}) => {
     const [value, setValue] = useState("");
-
+    const submit = useRef(null);
     const handleChange = (e) => {
         setValue(e.target.value);
     }
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        setValue("");
         if (value.trim() === "") {
             return setResult("empty")
         }
@@ -23,8 +24,8 @@ const SearchForm = ({setResult}) => {
     return (
         <form className={styles["search-form"]} onSubmit={(e) => handleSubmit(e)}>
             <input type="text" name="search" className={styles["search-input"]} value={value} onChange={(e) => handleChange(e)} placeholder="Enter acronym"/>
-            <button type="submit" className={styles["search-button"]}>Search</button>
-            <SuggestionsList value={value} setValue={setValue} data={data}/>
+            <button ref={submit} type="submit" className={styles["search-button"]}>Search</button>
+            <SuggestionsList value={value} submit={submit} setValue={setValue} data={data}/>
         </form>
     )
 }
