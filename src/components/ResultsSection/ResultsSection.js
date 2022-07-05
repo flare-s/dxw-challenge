@@ -2,8 +2,9 @@ import Container from "../UI/Container";
 import styles from "./ResultsSection.module.css";
 const ResultsSection = ({result}) => {
     return(
-        <section hidden={result === undefined ? true : ""}>
+        <section hidden={/* If the result is undefined hide this secton */ result === undefined ? true : false}>
             <Container>
+                {/* Depending on the result state show the appropriate message */}
                 <p className={styles.result}>{result === "empty" ?
                  "Please enter an acronym to start the search." :
                   typeof result === "object" && result !== null ?

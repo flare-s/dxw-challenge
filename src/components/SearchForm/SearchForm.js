@@ -11,10 +11,13 @@ const SearchForm = ({setResult}) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        // clear the input
         setValue("");
+        // Change the reslut state to show the results section with the result or with an appropriate error message.
         if (value.trim() === "") {
             return setResult("empty")
         }
+        // Look if the value entered is available at the "database"
         let resultArr = data.filter(el => {
             let key = Object.keys(el)[0].toLowerCase();
             return key === value.toLowerCase();
